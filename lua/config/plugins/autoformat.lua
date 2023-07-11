@@ -14,6 +14,8 @@ return {
 			formatting.goimports,
 			formatting.gofumpt,
 			formatting.rustfmt,
+			formatting.shfmt,
+			-- formatting.clang - format,
 
 			diagnostics.flake8,
 			diagnostics.pylint,

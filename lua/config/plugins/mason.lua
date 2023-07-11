@@ -21,6 +21,7 @@ return {
 			"stylua",
 			"goimports",
 			"gofumpt",
+			"shfmt",
 		}
 		for i, value in ipairs(m_list) do
 			if not (IsExists(HOME .. "/.local/share/nvim/mason/packages/" .. value)) then
@@ -36,7 +37,7 @@ return {
 				"bashls",
 				"jsonls",
 				"pyright",
-				--format
+				"jdtls",
 			},
 			automatic_installation = true,
 		})
