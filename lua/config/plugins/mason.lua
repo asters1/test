@@ -33,6 +33,7 @@ return {
 			ensure_installed = {
 				--lsp
 				"lua_ls",
+				"clangd",
 				"gopls",
 				"bashls",
 				"jsonls",
