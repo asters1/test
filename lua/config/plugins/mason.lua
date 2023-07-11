@@ -16,6 +16,18 @@ return {
 				},
 			},
 		})
+		--自动安装列表
+		local m_list = {
+			"stylua",
+			"goimports",
+			"gofumpt",
+		}
+		for i, value in ipairs(m_list) do
+			if not (IsExists(HOME .. "/.local/share/nvim/mason/packages/" .. value)) then
+				vim.cmd([[:MasonInstall ]] .. value)
+			end
+		end
+
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				--lsp
