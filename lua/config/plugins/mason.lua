@@ -20,6 +20,9 @@ return {
 			ensure_installed = { 
         "lua_ls",
         "gopls",
+        "bashls",
+        "jsonls",
+        "pyright"
       },
 			automatic_installation = true,
 		})
