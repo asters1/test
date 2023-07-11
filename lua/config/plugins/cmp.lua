@@ -126,8 +126,8 @@ return {
         behavior = cmp.ConfirmBehavior.Replace,
         select = true,
       }),
-      ["<Up>"] = cmp.mapping.select_prev_item(select_opts),
-      ["<Down>"] = cmp.mapping.select_next_item(select_opts),
+      ["<S-Tab>"] = cmp.mapping.select_prev_item(select_opts),
+      ["<Tab>"] = cmp.mapping.select_next_item(select_opts),
       ["<C-n>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
@@ -171,19 +171,20 @@ return {
       --end
       --end, { "i", "s" }),
       --}),
+      
 
-      ["<Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
-        elseif require("luasnip").expand_or_jumpable() then
-          vim.fn.feedkeys(
-            vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true),
-            ""
-          )
-        else
-          fallback()
-        end
-      end, { "i", "s" }),
+      -- ["<Tab>"] = cmp.mapping(function(fallback)
+      --   if cmp.visible() then
+      --     cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
+      --   elseif require("luasnip").expand_or_jumpable() then
+      --     vim.fn.feedkeys(
+      --       vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true),
+      --       ""
+      --     )
+      --   else
+      --     fallback()
+      --   end
+--      end, { "i", "s" }),
     }),
     experimental = {
       ghost_text = false,
@@ -235,7 +236,7 @@ return {
           omni = (vim.inspect(vim_item.menu):gsub('%"', "")),
           nvim_lsp = "[LSP]",
           luasnip = "[Snippet]",
-          buffer = "[Buffer]",
+          buffer = "[buffer]",
           spell = "[Spell]",
           latex_symbols = "[Symbols]",
           cmdline = "[CMD]",
@@ -376,7 +377,7 @@ return {
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+    vim.keymap.set("n", "<C-]>", vim.lsp.buf.definition, bufopts)
     vim.keymap.set("n", "B", vim.lsp.buf.hover, bufopts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
     vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
@@ -386,8 +387,8 @@ return {
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, bufopts)
     vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
-    vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set("n", "<space>c", vim.lsp.buf.rename, bufopts)
+    vim.keymap.set("n", "<space>i", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
     vim.keymap.set("n", "<space>F", function()
       vim.lsp.buf.format({ async = true })
