@@ -357,11 +357,6 @@ return {
 		--------------------------------lspconfig-----------------------
 		local lspconfig = require("lspconfig")
 		local util = require("lspconfig/util")
-		lspconfig.clangd.setup({
-			cmd = { "clangd", "--client-offset-encoding=utf-8" }, -- 将offset_encoding设置为utf-8
-			on_attach = on_attach,
-			flags = lsp_flags,
-		})
 
 		-- Mappings.
 		-- See `:help vim.diagnostic.*` for documentation on any of the below functions

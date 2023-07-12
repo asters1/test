@@ -7,7 +7,14 @@ return {
 		local diagnostics = null_ls.builtins.diagnostics
 		local actions = null_ls.builtins.code_actions
 		local hover = null_ls.builtins.hover
+		local notify = vim.notify
+		vim.notify = function(msg, ...)
+			if msg:match("warning: multiple different client offset_encodings") then
+				return
+			end
 
+			notify(msg, ...)
+		end
 		local sources = {
 			formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 			formatting.black.with({ extra_args = { "--fast" } }),
@@ -16,7 +23,7 @@ return {
 			formatting.gofumpt,
 			formatting.rustfmt,
 			formatting.shfmt,
-      -- formatting.clang-format,
+			-- formatting.clang-format,
 
 			diagnostics.flake8,
 			diagnostics.pylint,
