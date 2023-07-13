@@ -34,14 +34,14 @@ return {
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				--lsp
-				"lua_ls",
-				"clangd",
-				"quick-lint-js",
-				"gopls",
-				"bashls",
-				"jsonls",
-				"pyright",
-				"jdtls",
+				"lua_ls", --lua
+				"clangd", --c,c++
+				"eslint", --js
+				"gopls", --go
+				"bashls", --bash
+				"jsonls", --json
+				"pyright", --python
+				"jdtls", --java
 			},
 			automatic_installation = true,
 		})
