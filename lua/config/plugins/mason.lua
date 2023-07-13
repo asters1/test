@@ -36,7 +36,8 @@ return {
 				--lsp
 				"lua_ls", --lua
 				"clangd", --c,c++
-				"eslint", --js
+				"quick_lint_js", --js
+				-- "eslint", --js
 				"gopls", --go
 				"bashls", --bash
 				"jsonls", --json

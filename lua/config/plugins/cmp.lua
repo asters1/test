@@ -415,7 +415,8 @@ return {
 			"jsonls",
 			"sqlls",
 			"yamlls",
-			"quick_lint_js",
+			-- "quick_lint_js",
+			"eslint",
 			"texlab",
 		}
 		for _, lsp in pairs(servers) do
