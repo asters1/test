@@ -36,6 +36,7 @@ return {
 				--lsp
 				"lua_ls",
 				"clangd",
+				"quick-lint-js",
 				"gopls",
 				"bashls",
 				"jsonls",
