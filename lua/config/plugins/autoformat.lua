@@ -27,7 +27,7 @@ return {
 
 			diagnostics.flake8,
 			diagnostics.pylint,
-			diagnostics.golangci_lint,
+			-- diagnostics.golangci_lint,
 
 			actions.gitsigns,
 

@@ -22,7 +22,7 @@ return {
 			"goimports",
 			"gofumpt",
 			"shfmt",
-			"golangci-lint",
+			-- "golangci-lint",
 			"prettierd",
 		}
 		for i, value in ipairs(m_list) do
