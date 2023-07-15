@@ -16,7 +16,7 @@ return {
 			notify(msg, ...)
 		end
 		local sources = {
-			formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+			formatting.prettierd.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 			formatting.black.with({ extra_args = { "--fast" } }),
 			formatting.stylua,
 			formatting.goimports,
