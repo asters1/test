@@ -361,9 +361,9 @@ return {
 		-- Mappings.
 		-- See `:help vim.diagnostic.*` for documentation on any of the below functions
 		local opts = { noremap = true, silent = true }
-		vim.keymap.set("n", "<space>E", vim.diagnostic.open_float, opts)
-		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-		vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+		vim.keymap.set("n", "e", vim.diagnostic.open_float, opts)
+		vim.keymap.set("n", "g,", vim.diagnostic.goto_prev, opts)
+		vim.keymap.set("n", "g.", vim.diagnostic.goto_next, opts)
 		vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 		-- Use an on_attach function to only map the following keys
 		-- after the language server attaches to the current buffer
@@ -374,23 +374,33 @@ return {
 			-- Mappings.
 			-- See `:help vim.lsp.*` for documentation on any of the below functions
 			local bufopts = { noremap = true, silent = true, buffer = bufnr }
+			-- 跳转到当前符号的声明处。
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
+			-- 将跳转到当前符号的定义处
 			vim.keymap.set("n", "<C-]>", vim.lsp.buf.definition, bufopts)
+			-- 显示当前符号的悬停信息
 			vim.keymap.set("n", "B", vim.lsp.buf.hover, bufopts)
+			-- 将跳转到当前符号的实现处
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+			-- 命令将显示当前符号的签名信息
 			vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
-			vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
-			vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
-			vim.keymap.set("n", "<space>wl", function()
-				print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-			end, bufopts)
+			-- vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
+			-- vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
+			-- vim.keymap.set("n", "<space>wl", function()
+			-- 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+			-- end, bufopts)
+			--
+
+			-- 跳转到定义类型的位置。
 			vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
+			-- 重命名符号。
 			vim.keymap.set("n", "<space>c", vim.lsp.buf.rename, bufopts)
-			vim.keymap.set("n", "<space>i", vim.lsp.buf.code_action, bufopts)
+			-- vim.keymap.set("n", "<space>i", vim.lsp.buf.code_action, bufopts)
+			-- 列出与当前符号相关的所有引用。
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-			vim.keymap.set("n", "<space>F", function()
-				vim.lsp.buf.format({ async = true })
-			end, bufopts)
+			-- vim.keymap.set("n", "<space>F", function()
+			-- 	vim.lsp.buf.format({ async = true })
+			-- end, bufopts)
 		end
 		local lsp_flags = {
 			-- This is the default in Nvim 0.7+
