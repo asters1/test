@@ -23,7 +23,7 @@ return {
 			"gofumpt",
 			"shfmt",
 			"golangci-lint",
-			-- "prettier",
+			"prettierd",
 		}
 		for i, value in ipairs(m_list) do
 			if not (IsExists(HOME .. "/.local/share/nvim/mason/packages/" .. value)) then
