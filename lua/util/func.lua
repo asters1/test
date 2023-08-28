@@ -38,7 +38,7 @@ end
 
 GoTest = function()
 	vim.cmd([[
-  call setreg('z',"\<ESC>ggdGipackage main\n\nimport (\"testing\"\n)\nfunc TestMain(t *testing.T) {\n}\<ESC>:w <CR>")
+  call setreg('z',"\<ESC>ggdGipackage main\n\nimport (\n\"testing\"\n\"fmt\"\n)\nfunc TestMain(t *testing.T) {\nfmt.Println(\"Test\")\n}\<ESC>:w <CR>")
   normal @z
 	]])
 end
