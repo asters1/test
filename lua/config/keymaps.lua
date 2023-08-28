@@ -70,6 +70,7 @@ local nmappings = {
 	{ from = "<LEADER><right>", to = ":vertical resize+5<CR>" },
 
 	{ from = "<LEADER>s", to = ":lua AutoRun()<CR>" },
+	{ from = "gt", to = ":lua GoTest()<CR>" },
 }
 
 for _, mapping in ipairs(nmappings) do
