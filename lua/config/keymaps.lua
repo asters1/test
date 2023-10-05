@@ -71,6 +71,7 @@ local nmappings = {
 
 	{ from = "<LEADER>s", to = ":lua AutoRun()<CR>" },
 	{ from = "gt", to = ":lua GoTest()<CR>" },
+	{ from = "mm", to = ":lua AutoKuoHao()<CR>i" },
 }
 
 for _, mapping in ipairs(nmappings) do

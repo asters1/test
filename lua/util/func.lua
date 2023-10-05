@@ -40,7 +40,14 @@ GoTest = function()
 	vim.cmd([[
   call setreg('z',"\<ESC>ggdGipackage main\n\nimport (\n\"testing\"\n\"fmt\"\n)\nfunc TestMain(t *testing.T) {\nfmt.Println(\"Test\")\n}\<ESC>:w <CR>")
   normal @z
-	]])
+  ]])
+end
+-- 自动括号
+AutoKuoHao = function()
+	vim.cmd([[
+  call setreg('z',"\<ESC>ciw<>\<ESC>hpja<\\>\<ESC>hpyiwhh")
+  normal @z
+  ]])
 end
 
 AutoRun = function()
