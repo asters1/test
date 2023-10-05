@@ -421,7 +421,7 @@ return {
 			"vuels",
 			"dockerls",
 			"gopls",
-			"html",
+			-- "html-lsp",
 			"jsonls",
 			"sqlls",
 			"yamlls",

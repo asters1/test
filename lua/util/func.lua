@@ -76,6 +76,11 @@ AutoRun = function()
 			vim.cmd([[:term python3 %]])
 		elseif filetype == "javascript" then
 			vim.cmd([[:term node %]])
+		elseif filetype == "html" then
+			vim.cmd([[
+      :q
+      :silent !microsoft-edge-stable %
+      ]])
 		end
 	end
 end
