@@ -22,6 +22,7 @@ local nmappings = {
 	{ from = "L", to = "7j", mode = mode_nv },
 	-- ---------- INSERT模式 ---------- ---
 	{ from = "<C-S>", to = "<ESC>:w<CR>a", mode = mode_i },
+	{ from = "<C-X>", to = "<ESC>:lua AutoKuoHao()<CR>i", mode = mode_i },
 	-- ---------- VISUAL模式 ---------- ---
 	{ from = "#", to = "<ESC>Vgc", mode = mode_v },
 	-- ---------- NORMAL模式 ---------- ---
@@ -71,7 +72,6 @@ local nmappings = {
 
 	{ from = "<LEADER>s", to = ":lua AutoRun()<CR>" },
 	{ from = "gt", to = ":lua GoTest()<CR>" },
-	{ from = "mm", to = ":lua AutoKuoHao()<CR>i" },
 }
 
 for _, mapping in ipairs(nmappings) do
