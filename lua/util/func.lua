@@ -45,7 +45,7 @@ end
 -- 自动括号
 AutoKuoHao = function()
 	vim.cmd([[
-  call setreg('z',"\<ESC>ciw<>\<ESC>hpja<\\>\<ESC>hpyiwhh")
+  call setreg('z',"\<ESC>ciw<>\<ESC>hpja</>\<ESC>hpyiwhh")
   normal @z
   ]])
 end
