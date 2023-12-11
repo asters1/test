@@ -1,6 +1,7 @@
 return {
   {
- gh..   "shellRaining/hlchunk.nvim",
+    gh .. "asters1/hlchunk.nvim",
+    -- gh..   "shellRaining/hlchunk.nvim",
     init = function()
       vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, { pattern = "*", command = "EnableHL", })
       require('hlchunk').setup({
@@ -32,4 +33,3 @@ return {
   -- 	}
   -- },
 }
-
