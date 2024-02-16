@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>drawable/scrollview.png</file>
+        <file>drawable/scrollviewleft.png</file>
+        <file>drawable/icon_video.png</file>
+        <file>drawable/icon_pre.png</file>
+        <file>drawable/icon_play.png</file>
+        <file>drawable/icon_loading.png</file>
+        <file>drawable/icon_img_placeholder.png</file>
+        <file>drawable/icon_empty.png</file>
+        <file>drawable/icon_back.png</file>
+        <file>drawable/app_bg.png</file>
+        <file>drawable/app_banner.png</file>
+        <file>drawable/app_icon.png</file>
+        <file>drawable/sousuo.png</file>
+        <file>drawable/shezhi.png</file>
+        <file>drawable/shangyibu.png</file>
+        <file>drawable/shanchu.png</file>
+        <file>drawable/live.png</file>
+        <file>drawable/lishijilu.png</file>
+    </qresource>
+</RCC>
