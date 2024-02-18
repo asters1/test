@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QApplication>
 #include <QPoint>
+#include "data/config.h"
 
 ScreenUtil::ScreenUtil(QObject *parent)
     : QObject{parent}
@@ -10,6 +11,7 @@ ScreenUtil::ScreenUtil(QObject *parent)
 
 
 }
+
 
 
 QPoint ScreenUtil::GetScreenCenter(QSize ws)

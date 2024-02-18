@@ -3,6 +3,7 @@
 #include <QDebug>
 #include "data/config.h"
 #include "ui/pages/sp.h"
+#include "util/theme.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -11,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->resize(App_width,App_height);
     connect(ui->sz_btn,&sz::clicked,this,&MainWindow::LoadSetPage);
+    Theme::SetTheme(this);
 
 }
 
@@ -22,10 +24,10 @@ MainWindow::~MainWindow()
 void MainWindow::LoadSetPage()
 {
 
-    qDebug()<<"正在加载SetPage页面...";
+//    qDebug()<<"正在加载SetPage页面...";
     this->sp=new SP();
     InitPage(sp,"设置");
-    qDebug()<<"加载SetPage页面完成!";
+//    qDebug()<<"加载SetPage页面完成!";
     connect(sp,&SP::backMwin,this,[=]{this->sp->close();this->show();});
 
 }

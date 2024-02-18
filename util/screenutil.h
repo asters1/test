@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+#include <QWidget>
+
 class ScreenUtil : public QObject
 {
     Q_OBJECT

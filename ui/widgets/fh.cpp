@@ -6,6 +6,8 @@ FH::FH(QWidget *parent) :
     ui(new Ui::FH)
 {
     ui->setupUi(this);
+    ui->fh_btn->SetImg(":/drawable/shangyibu.png");
+    connect(ui->fh_btn,&btn::clicked,[=]{emit clicked();});
 }
 
 FH::~FH()

@@ -15,6 +15,8 @@ public:
     explicit FH(QWidget *parent = nullptr);
     ~FH();
 
+signals:
+    void clicked();
 private:
     Ui::FH *ui;
 };

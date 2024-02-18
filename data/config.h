@@ -1,4 +1,5 @@
 #include <QIcon>
+#include <QDir>
 #ifndef CONFIG_H
 #define CONFIG_H
 //常量定义
@@ -12,11 +13,33 @@ const QString App_Icon_Path=":/drawable/app_icon.png";
 const int Icon_Bar_width=30;
 const int Icon_Bar_height=30;
 
-//窗体的主色调
+//窗体的背景色
+const QString Win_BackGround_Color="#e0ebeb";
+
 
 //标题的字体大小
 const int Title_Font_Size=18;
+//输入框name的字体大小
+const int Name_Input_Font_Size=12;
+//输入框的字体大小
+const int Input_Font_Size=12;
+
+
+//项目路径
 
 
 
+
+    class Cfg : public QObject
+{
+    Q_OBJECT
+public:
+    explicit Cfg(QObject *parent = nullptr);
+
+    //获得项目路径
+    static QString GetProjectPath();
+
+signals:
+
+};
 #endif // CONFIG_H
