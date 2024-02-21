@@ -12,7 +12,8 @@ SP::SP(QWidget *parent) :
     ui->sz_label->setFont(f);
     connect(ui->back_btn,&FH::clicked,[=]{emit backMwin();});
     Theme::SetTheme(this);
-    ui->cfg_input->SetText("配置地址");
+    ui->cfg_input->SetText("配 置 地 址");
+    ui->proxy_input->SetText("Proxy 地址");
 
 }
 
@@ -20,3 +21,4 @@ SP::~SP()
 {
     delete ui;
 }
+

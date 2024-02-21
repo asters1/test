@@ -11,3 +11,8 @@ QString Cfg::GetProjectPath()
     return QCoreApplication::applicationDirPath();
 
 }
+
+QString Cfg::LoadLocalConfig()
+{
+
+}

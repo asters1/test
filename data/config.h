@@ -28,6 +28,8 @@ const int Input_Font_Size=12;
 //项目路径
 
 
+//文件路径
+//set.json
 
 
     class Cfg : public QObject
@@ -38,6 +40,7 @@ public:
 
     //获得项目路径
     static QString GetProjectPath();
+    QString LoadLocalConfig();
 
 signals:
 
