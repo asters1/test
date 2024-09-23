@@ -19,8 +19,8 @@ return {
     --自动安装列表
     local m_list = {
       -- "stylua",
-      "goimports",
-      "gofumpt",
+      -- "goimports",
+      -- "gofumpt",
       "shfmt",
       -- "golangci-lint",
       "prettierd",
@@ -34,15 +34,15 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         --lsp
-        "lua_ls",    --lua
-        "clangd",    --c,c++
+        "lua_ls",        --lua
+        "clangd",        --c,c++
         "quick_lint_js", --js
         -- "eslint", --js
-        "gopls",     --go
-        "bashls",    --bash
-        "jsonls",    --json
-        "pyright",   --python
-        "jdtls",     --java
+        "gopls",         --go
+        "bashls",        --bash
+        "jsonls",        --json
+        "pyright",       --python
+        "jdtls",         --java
       },
       automatic_installation = true,
     })
