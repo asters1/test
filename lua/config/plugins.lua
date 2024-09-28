@@ -32,6 +32,8 @@ require("lazy").setup({
   require("config.plugins.treesitter"),
   --缩进线
   require("config.plugins.indent"),
+  --提示命令
+  require("config.plugins.whichkey"),
   -- --LSP与自动补全
   -- require("config.plugins.lsp"),
   require("config.plugins.mason"),
