@@ -39,7 +39,8 @@ require("lazy").setup({
   require("config.plugins.mason"),
   require("config.plugins.cmp"),
   require("config.plugins.lsp_signature"),
-  require("config.plugins.autoformat")
+  require("config.plugins.autoformat"),
+  -- require("config.plugins.pack-vue")
   --LSP与自动补全并且自动格式化
   -- require("config.plugins.mason"),
   -- require("config.plugins.autocomplete").config,

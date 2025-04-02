@@ -1,6 +1,6 @@
 -- 全局变量
 HOME = os.getenv("HOME")
-gh = "https://github.wisteria.cf/"
+gh = "https://gh.wisteria.cf/"
 -- print(HOME)
 --基础
 require("util.func")

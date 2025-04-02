@@ -422,6 +422,7 @@ return {
       "vuels",
       "dockerls",
       "gopls",
+      "volar",
       -- "html-lsp",
       "jsonls",
       "sqlls",
@@ -436,9 +437,33 @@ return {
         flags = lsp_flags,
       })
     end
+    require('lspconfig').volar.setup({
+      filetypes = { 'vue', 'javascript', 'typescript' },
+      init_options = {
+        configFile = "~/.config/nvim/file/tsconfig.json",
+        typescript = {
+          serverPath = "./node_modules/typescript/lib/tsserverlibrary.js"
+        },
+        vue = {
+          hybridMode = false,        -- UniApp 需要关闭 hybrid 模式
+          experimentalCompatMode = 2 -- 启用 Vue 3 实验性特性
+        }
+      },
+      on_attach = function(client, bufnr)
+        -- 禁用 Volar 的格式化功能（与 prettier 配合使用）
+        client.server_capabilities.documentFormattingProvider = false
+
+        -- 类型增强映射
+        vim.keymap.set("n", "gT", "<cmd>VolarTypeScriptGoToSourceDefinition<CR>", { buffer = bufnr })
+      end
+    })
+
+    --()===
+
+    --()===
   end,
   dependencies = {
-    { gh .. "hrsh7th/nvim-cmp" },   -- Autocompletion plugin
+    { gh .. "hrsh7th/nvim-cmp" },     -- Autocompletion plugin
     { gh .. "hrsh7th/cmp-nvim-lsp" }, -- LSP source for nvim-cmp
     { gh .. "hrsh7th/cmp-buffer" },
     { gh .. "hrsh7th/cmp-path" },
