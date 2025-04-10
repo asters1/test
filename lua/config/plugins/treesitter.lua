@@ -7,7 +7,7 @@ return {
     build = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = { "query", "typescript", "dart", "java", "c", "prisma", "bash", "go", "lua", "html", "vim", "vue" },
+        ensure_installed = { "query", "typescript", "dart", "java", "c", "prisma", "bash", "go", "lua", "html", "vim", "vue", "javascript", "css", "scss" },
         highlight = {
           enable = true,
           disable = {}, -- list of language that will be disabled

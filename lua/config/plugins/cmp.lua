@@ -419,7 +419,7 @@ return {
       "lua_ls",
       "cmake",
       "cssls",
-      "vuels",
+      -- "vuels",
       "dockerls",
       "gopls",
       "volar",
@@ -445,8 +445,8 @@ return {
           serverPath = "./node_modules/typescript/lib/tsserverlibrary.js"
         },
         vue = {
-          hybridMode = false,        -- UniApp 需要关闭 hybrid 模式
-          experimentalCompatMode = 2 -- 启用 Vue 3 实验性特性
+          hybridMode = false,          -- UniApp 需要关闭 hybrid 模式
+          experimentalCompatMode = 2   -- 启用 Vue 3 实验性特性
         }
       },
       on_attach = function(client, bufnr)
